@@ -1,4 +1,25 @@
 /**
+  * This file was created by compiling the Node JS Module code from files
+  *   * src/index.js
+  *   * src/styles.js
+  *   * src/formatters.js
+  * into a single file, and then rewriting code that depends on Node and other
+  * dependencies and in theory should work in a "vanilla" js environment,
+  * assuming the OpenLayers library was included as well.
+
+  * This work was performed in June, 2021, so it will not reflect any
+  * updates made to the module files, and in fact may break Node build
+  * processes.
+
+  * This and all prior code is under the MIT licence.
+
+  */
+
+//////////////////////////////////////////////////////////////
+////                    index.js                 ////////////
+//////////////////////////////////////////////////////////////
+
+/**
  * Map projection - used for labeling features
  * @type {import('ol/proj/Projection')}
  */
@@ -34,8 +55,7 @@ const createStyleFunctionFromUrl = async (layerUrl) => {
   const response = await fetch(
     layerUrl + '?f=json',
     {
-      method: 'GET',
-      mode: 'no-cors'
+      dataType: "jsonp"
     }
   );
   const esriStyleDefinition = await response.json();
