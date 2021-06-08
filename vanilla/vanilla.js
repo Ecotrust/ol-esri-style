@@ -1,4 +1,6 @@
 /**
+  * Forked from https://github.com/bojko108/ol-esri-style
+  
   * This file was created by compiling the Node JS Module code from files
   *   * src/index.js
   *   * src/styles.js
