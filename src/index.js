@@ -276,8 +276,10 @@ const readSymbol = (symbol) => {
     case 'esriPMS':
       return {
         icon: {
-          src: `data:image/png;base64,${symbol.imageData}`,
+          src: `data:${symbol.contentType};base64,${symbol.imageData}`,
           rotation: symbol.angle,
+          scale: symbol.width ? symbol.width/64 : 1,
+          size: [64, 64],
         },
       };
     case 'esriTS':
